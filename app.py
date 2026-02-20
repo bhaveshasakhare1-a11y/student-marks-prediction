@@ -1,42 +1,60 @@
 import streamlit as st
 import pandas as pd
 import pickle
-import joblib
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
-    page_title="Student Marks Prediction",
+    page_title="Student Marks Prediction System",
     page_icon="🎓",
     layout="wide"
 )
 
-# ---------------- CUSTOM CSS ----------------
+# ---------------- GRADIENT BACKGROUND ----------------
 st.markdown("""
     <style>
     .main {
-        background-color: #f5f7fa;
+        background: linear-gradient(to right, #e3f2fd, #fce4ec);
     }
+
+    .title {
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+        color: #1a237e;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size: 18px;
+        color: gray;
+        margin-bottom: 30px;
+    }
+
     .stButton>button {
-        background-color: #4CAF50;
+        background: linear-gradient(to right, #667eea, #764ba2);
         color: white;
-        border-radius: 8px;
+        border-radius: 10px;
         height: 3em;
         width: 100%;
-        font-size: 16px;
+        font-size: 18px;
+        font-weight: bold;
     }
+
     .stButton>button:hover {
-        background-color: #45a049;
+        background: linear-gradient(to right, #5a67d8, #6b46c1);
     }
     </style>
 """, unsafe_allow_html=True)
 
 # ---------------- TITLE ----------------
-st.markdown("<h1 style='text-align: center;'>🎓 Student Marks Prediction App</h1>", unsafe_allow_html=True)
+st.markdown('<div class="title">🎓 Student Marks Prediction System</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">AI-Based Academic Performance Predictor</div>', unsafe_allow_html=True)
+
 st.markdown("---")
 
 # ---------------- SIDEBAR ----------------
-st.sidebar.header("📘 About Project")
-st.sidebar.write("This app predicts student marks using Random Forest Machine Learning model.")
+st.sidebar.header("📘 About System")
+st.sidebar.write("This system predicts student marks using Random Forest Machine Learning model.")
 st.sidebar.write("Developed by Bhavesha Sakhare")
 
 # ---------------- INPUT SECTION ----------------
@@ -56,6 +74,20 @@ with col2:
 st.markdown("---")
 
 # ---------------- PREDICT BUTTON ----------------
-if st.button("Predict Marks"):
-    st.success("Predicted Marks: 95.20")  # Replace with actual prediction logic
+if st.button("🚀 Predict Marks"):
     
+    # Replace with your actual model prediction
+    predicted_marks = 92.45  
+
+    st.markdown(f"""
+        <div style="
+            background: linear-gradient(to right, #d4fc79, #96e6a1);
+            padding:25px;
+            border-radius:15px;
+            text-align:center;
+            font-size:26px;
+            font-weight:bold;
+            color:#1b5e20;">
+            📊 Predicted Marks: {predicted_marks}
+        </div>
+    """, unsafe_allow_html=True)
